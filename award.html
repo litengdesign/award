@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>random</title>
-	<style>
+  <meta charset="UTF-8">
+  <title>random</title>
+  <style>
     #awardListDom{width: 100%;}
-	</style>
+  </style>
 </head>
 <body>
   <label for="awardListDom">奖项列表</label><br>
   <input type="text" value="" id="awardListDom"> <br>
   <label for="num">抽到的奖</label><br>
-	<input type="text" value="" id="num"> <br>
-	<button id="submit">开始抽奖</button>
-	<script>
+  <input type="text" value="" id="num"> <br>
+  <button id="submit">开始抽奖</button>
+  <blockquote>
+    <p>github:<a href="github:https://github.com/litengdesign/award">https://github.com/litengdesign/award</a></p>
+    <p>demo: <a href="http://2.liteng.sinaapp.com/javascript/award.html">http://2.liteng.sinaapp.com/javascript/award.html</a></p>
+  </blockquote>
+  <script>
 
     /* 
     * 思路：随机抽奖，抽一个奖项便减少一个
@@ -39,19 +43,19 @@
 
     submit.onclick=function(){
       //引用数组
-    	var oldArray=awardList;
+      var oldArray=awardList;
       var rNum=random(0,oldArray.length);
       
       if(oldArray.length<1){
-      	awardListDom.value="活动结束";
+        awardListDom.value="活动结束";
         num.value="活动结束";
       }
       else{
-      	num.value=oldArray[rNum];
-      	oldArray.splice(rNum,1);
-      	awardListDom.value=oldArray;
+        num.value=oldArray[rNum];
+        oldArray.splice(rNum,1);
+        awardListDom.value=oldArray;
       }
     }
-	</script>
+  </script>
 </body>
 </html>
